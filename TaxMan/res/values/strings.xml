@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Tax Man</string>
+    <string name="action_settings">Configuração</string>
+
+    <string-array name="pref_dias_uteis">
+        <item>19 Dias</item>
+        <item>20 Dias</item>
+        <item>21 Dias</item>
+        <item>22 Dias</item>
+        <item>23 Dias</item>
+    </string-array>
+    <string-array name="pref_dias_uteis_values">
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+    </string-array>
+    <string-array name="pref_horas_trabalho">
+        <item>04:00</item>
+        <item>06:00</item>
+        <item>08:00</item>
+        <item>10:00</item>
+        <item>12:00</item>
+        <item>24:00</item>
+    </string-array>
+    <string-array name="pref_horas_trabalho_values">
+        <item>4</item>
+        <item>6</item>
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+        <item>24</item>
+    </string-array>
+
+    <string name="observacao">* Ajuda de Custo abate o % Total CLT</string>
+    <string name="title_activity_tab">TabActivity</string>
+    <string name="title_section1">Taxa</string>
+    <string name="title_section2">Salário</string>
+    <string name="title_section3">CLT x PJ</string>
+    <string name="salario_label">Salário CLT:</string>
+    <string name="valor_pj_label">Valor PJ:</string>
+    <string name="margem_label">Margem:</string>
+    <string name="tx_atual_label">Tx Atual:</string>
+    <string name="dias_uteis_label">Dias(Férias):</string>
+    <string name="btn_calc">Calcular</string>
+    <string name="btn_enviar">Enviar</string>
+    <string name="tb_pj_label">PJ</string>
+    <string name="tb_clt_label">CLT</string>
+    <string name="tb_sal_bruto_label">Salário Bruto</string>
+    <string name="tb_sal_liquido_label">Salário Líquido</string>
+    <string name="tb_tx_min_labell">Taxa Mínima</string>
+    <string name="tb_custo_label">Custos</string>
+    <string name="tb_imposto_label">  Imposto Fatura</string>
+    <string name="tb_encargo_label">  Encargos+Benefícios</string>
+    <string name="tb_salario_label">  Salário</string>
+    <string name="tb_resultado_r_label">Resultado(R$)</string>
+    <string name="tb_resultado_p_clt_label">Resultado(%)</string>
+    <string name="tb_resultado_t_label">Resultado Tx Atual(%)</string>
+    <string name="tb_faturamento_label">Faturamento</string>
+    <string name="tb_ref_label">Ref</string>
+    <string name="tb_provento_label">Provento</string>
+    <string name="tb_desconto_label">Desconto</string>
+    <string name="tb_inss_label">INSS</string>
+    <string name="tb_irrf_label">IRRF</string>
+    <string name="tb_totais_label">Totais</string>
+    <string name="tb_total_anual_label">Total Anual</string>
+    <string name="tb_ferias_label">Férias</string>
+    <string name="tb_decimo_label">13º Salário</string>
+    <string name="tb_liquido_anual">Líquido Anual</string>
+    <string name="tb_fgts">FGTS</string>
+    <string name="tb_liquido_direitos">Líquido Anual + Direitos</string>
+    <string name="p_dias_label">Dias Úteis/Mês</string>
+    <string name="p_horas_label">Horas/Dia</string>
+    <string name="p_alimentacao_label">Alimentação</string>
+    <string name="p_outros_label">Outros</string>
+    <string name="p_transporte_label">Transporte</string>
+    <string name="p_ajuda_label">Ajuda de custo</string>
+    <string name="p_encargo_label">Encargo CLT</string>
+    <string name="p_dissidio_label">Dissídio</string>
+    <string name="p_imposto_label">Imposto Fatura</string>
+    <string name="p_help_label">* Ajuda de Custo abate no % Total CLT</string>
+    <string name="b_cltPJ">>></string>
+    <string name="b_pjCLT">&lt;&lt;</string>
+
+</resources>

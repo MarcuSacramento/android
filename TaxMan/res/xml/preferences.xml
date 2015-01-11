@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Configuração de Tempo" >
+        <ListPreference
+            android:defaultValue="21"
+            android:entries="@array/pref_dias_uteis"
+            android:entryValues="@array/pref_dias_uteis_values"
+            android:key="dias_uteis_mes"
+            android:title="Dias úteis/mês" />
+        <ListPreference
+            android:defaultValue="8"
+            android:entries="@array/pref_horas_trabalho"
+            android:entryValues="@array/pref_horas_trabalho_values"
+            android:key="horas_trabalho"
+            android:title="Horas de Trabalho/Dia" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Benefícios" >
+        <EditTextPreference
+            android:defaultValue="340,00"
+            android:key="beneficio_alimentacao"
+            android:title="Alimentação(R$)" />
+        <EditTextPreference
+            android:defaultValue="120,00"
+            android:key="beneficio_combustivel"
+            android:title="Combustível/Vale Transporte(R$)" />
+        <EditTextPreference
+            android:defaultValue="240,00"
+            android:key="beneficio_outros"
+            android:title="Outros(R$)" />
+        <EditTextPreference
+            android:defaultValue="0,00"
+            android:key="beneficio_ajuda"
+            android:title="Ajuda de Custo(R$)" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Impostos e Encargos" >
+        <EditTextPreference
+            android:defaultValue="80,00"
+            android:key="encargo_clt"
+            android:title="CLT(%)" />
+        <EditTextPreference
+            android:defaultValue="25,00"
+            android:key="imposto_fatura"
+            android:title="Imposto sobre faturamento(%)" />
+        <EditTextPreference
+            android:defaultValue="6,50"
+            android:key="dissidio"
+            android:title="Dissídio Anual(%)" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Resultado" >
+        <EditTextPreference
+            android:defaultValue="12,00"
+            android:key="margem"
+            android:title="Margem esperada(%)" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Configuração de INSS" >
+    </PreferenceCategory>
+    <PreferenceCategory android:title="  Faixa Salarial" >
+        <EditTextPreference
+            android:defaultValue="1317,07"
+            android:key="inss_faixa_1"
+            android:title="    Salário Máximo 1ª Faixa" />
+        <EditTextPreference
+            android:defaultValue="2195,12"
+            android:key="inss_faixa_2"
+            android:title="    Salário Máximo 2ª Faixa" />
+        <EditTextPreference
+            android:defaultValue="4390,24"
+            android:key="inss_faixa_3"
+            android:title="    Salário Máximo 3ª Faixa" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="  Percentual x Faixa" >
+        <EditTextPreference
+            android:defaultValue="8,00"
+            android:key="inss_percentual_1"
+            android:title="    Percentual 1ª Faixa" />
+        <EditTextPreference
+            android:defaultValue="9,00"
+            android:key="inss_percentual_2"
+            android:title="    Percentual 2ª Faixa" />
+        <EditTextPreference
+            android:defaultValue="11,00"
+            android:key="inss_percentual_3"
+            android:title="    Percentual 3ª Faixa" />
+        <EditTextPreference
+            android:defaultValue="482,93"
+            android:key="inss_percentual_teto"
+            android:title="    Teto" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Configuração de IRRF" >
+    </PreferenceCategory>
+    <PreferenceCategory android:title="  Faixa Salarial" >
+        <EditTextPreference
+            android:defaultValue="1787,77"
+            android:key="irrf_faixa_1"
+            android:title="    Salário Máximo 1ª Faixa" />
+        <EditTextPreference
+            android:defaultValue="2679,29"
+            android:key="irrf_faixa_2"
+            android:title="    Salário Máximo 2ª Faixa" />
+        <EditTextPreference
+            android:defaultValue="3572,43"
+            android:key="irrf_faixa_3"
+            android:title="    Salário Máximo 3ª Faixa" />
+        <EditTextPreference
+            android:defaultValue="4463,81"
+            android:key="irrf_faixa_4"
+            android:title="    Salário Máximo 3ª Faixa" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="  Alíquota x Faixa" >
+        <EditTextPreference
+            android:defaultValue="0,00"
+            android:key="irrf_percentual_1"
+            android:title="    Alíquota 1ª Faixa" />
+        <EditTextPreference
+            android:defaultValue="7,50"
+            android:key="irrf_percentual_2"
+            android:title="    Alíquota 2ª Faixa" />
+        <EditTextPreference
+            android:defaultValue="15,00"
+            android:key="irrf_percentual_3"
+            android:title="    Alíquota 3ª Faixa" />
+        <EditTextPreference
+            android:defaultValue="22,50"
+            android:key="irrf_percentual_4"
+            android:title="    Alíquota 4ª Faixa" />
+        <EditTextPreference
+            android:defaultValue="27,50"
+            android:key="irrf_percentual_5"
+            android:title="    Alíquota acima da 4ª faixa" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="  Dedução x Faixa" >
+        <EditTextPreference
+            android:defaultValue="0,00"
+            android:key="irrf_deducao_1"
+            android:title="    Dedução 1ª Faixa" />
+        <EditTextPreference
+            android:defaultValue="134,08"
+            android:key="irrf_deducao_2"
+            android:title="    Dedução 2ª Faixa" />
+        <EditTextPreference
+            android:defaultValue="335,03"
+            android:key="irrf_deducao_3"
+            android:title="    Dedução 3ª Faixa" />
+        <EditTextPreference
+            android:defaultValue="602,96"
+            android:key="irrf_deducao_4"
+            android:title="    Dedução 4ª Faixa" />
+        <EditTextPreference
+            android:defaultValue="826,15"
+            android:key="irrf_deducao_5"
+            android:title="    Dedução acima da 4ª Faixa" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:summary="Percentual FGTS"
+        android:title="FGTS" >
+        <EditTextPreference
+            android:defaultValue="8,00"
+            android:key="fgts_percentual"
+            android:title="Percentual FGTS" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:summary="Configuração PJ"
+        android:title="Configuração PJ" >
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:summary="Simples Nacional"
+        android:title="Simples Nacional" >
+        <EditTextPreference
+            android:defaultValue="4,50"
+            android:key="simples_nacional"
+            android:title="Alíquota Simples Nacional" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:summary="Só altere se souber o que está fazendo"
+        android:title="Avançado" >
+        <EditTextPreference
+            android:defaultValue="0,15"
+            android:key="incremento"
+            android:selectable="false"
+            android:title="Incremento" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

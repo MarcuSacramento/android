@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="vertical" >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent" >
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stretchColumns="0,1,2,3,4" >
+
+                <TableRow
+                    android:id="@+id/tableRow4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/tvSalario"
+                        android:text="CLT:"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <com.kollecionador.taxman.util.FieldSalario
+                        android:id="@+id/fieldSalCLT"
+                        android:nextFocusDown="@+id/fieldValPJ"
+                        android:text="FieldSalario" />
+
+                    <Button
+                        android:id="@+id/btnCalcular"
+                        style="?android:attr/buttonStyleSmall"
+                        android:text="@string/b_cltPJ"
+                       />
+
+                    <TextView
+                        android:id="@+id/tvPJ"
+                        android:text="PJ:"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <com.kollecionador.taxman.util.FieldSalario
+                        android:id="@+id/fieldPJ"
+                        android:nextFocusDown="@+id/fieldValPJ"
+                        android:text="FieldSalario" />
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/Black"
+                android:stretchColumns="0,1,2,3" >
+
+                <TableRow android:background="@drawable/cell_shape_resultado" 
+                    android:layout_gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/tvCLT"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:text="Valores CLT"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow
+                    android:background="@drawable/cell_shape_comum"
+                    android:gravity="center_horizontal" >
+
+                    <TextView
+                        android:id="@+id/tvLiquido"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_span="3"
+                        android:gravity="center_horizontal"
+                        android:text="@string/tb_liquido_direitos"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/liquidoAnualDireito"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/cell_shape_resultado"
+                        android:gravity="center_horizontal"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+                </TableRow>
+                   <TableRow android:background="@drawable/cell_shape_resultado" 
+                    android:layout_gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/tvPJValor"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:text="Valores PJ"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow
+                    android:background="@drawable/cell_shape_comum"
+                    android:gravity="center_horizontal" >
+
+                    <TextView
+                        android:id="@+id/tvLiquidoPJ"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_span="3"
+                        android:gravity="center_horizontal"
+                        android:text="Valor Com Imposto"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/liquidoAnualDireitoPJ"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/cell_shape_resultado"
+                        android:gravity="center_horizontal"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+                </TableRow>
+                 <TableRow
+                    android:background="@drawable/cell_shape_comum"
+                    android:gravity="center_horizontal" >
+
+                    <TextView
+                        android:id="@+id/tvLiquidoPJImp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_span="3"
+                        android:gravity="center_horizontal"
+                        android:text="Valor Imposto"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/liquidoAnualDireitoPJImp"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/cell_shape_resultado"
+                        android:gravity="center_horizontal"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+                </TableRow>
+            </TableLayout>
+        </TableLayout>
+    </ScrollView>
+
+</RelativeLayout>

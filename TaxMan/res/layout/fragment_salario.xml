@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="vertical" >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent" >
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stretchColumns="0,1,2" >
+
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/tvSalario"
+                        android:text="Salário:"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <com.kollecionador.taxman.util.FieldSalario
+                        android:id="@+id/fieldSalCLT"
+                        android:nextFocusDown="@+id/fieldValPJ"
+                        android:text="FieldSalario" />
+
+                    <TextView
+                        android:id="@+id/tvDiasFeriasLabel"
+                        android:text="@string/dias_uteis_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <EditText
+                        android:id="@+id/fieldDias"
+                        android:ems="3"
+                        android:inputType="number"
+                        android:text="30" />
+
+                    <TextView
+                        android:id="@+id/tvMesesLabel"
+                        android:text="Meses"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <EditText
+                        android:id="@+id/fieldmeses"
+                        android:ems="3"
+                        android:inputType="number"
+                        android:text="12" />
+
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stretchColumns="0,1" >
+
+                <TableRow
+                    android:id="@+id/tableRow4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <Button
+                        android:id="@+id/btnCalcular"
+                        style="?android:attr/buttonStyleSmall"
+                        android:text="@string/btn_calc" />
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/Black"
+                android:stretchColumns="0,1,2,3" >
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/textView107"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_span="3"
+                        android:background="@drawable/cell_shape_comum"
+                        android:gravity="center_horizontal"
+                        android:text="@string/tb_salario_label"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvSalarioLiquido"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/cell_shape_resultado"
+                        android:gravity="center_horizontal"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvVazioSalario"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvRef"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:text="@string/tb_ref_label"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvProvento"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center_horizontal"
+                        android:padding="2dp"
+                        android:text="@string/tb_provento_label"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvDesconto"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center_horizontal"
+                        android:padding="2dp"
+                        android:text="@string/tb_desconto_label"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvINSSSalario"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:text="@string/tb_inss_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <TextView
+                        android:id="@+id/tvRefINSSSalario"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <TextView
+                        android:id="@+id/tvProventoINSSSalario"
+                        android:background="@drawable/cell_shape_entrada"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <TextView
+                        android:id="@+id/tvDescontoINSSSalario"
+                        android:background="@drawable/cell_shape_saida"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvIRRFSalario"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:text="@string/tb_irrf_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvRefIRRFSalario"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvProventoIRRFSalario"
+                        android:background="@drawable/cell_shape_entrada"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvDescontoIRRFSalario"
+                        android:background="@drawable/cell_shape_saida"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvOutrosSalario"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:text="@string/p_outros_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvOutrosRefSalario"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvOutrosProventoSalario"
+                        android:background="@drawable/cell_shape_entrada"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvOutrosDescontoSalario"
+                        android:background="@drawable/cell_shape_saida"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvTotaisSalario"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:text="@string/tb_totais_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="bold|italic" />
+
+                    <TextView
+                        android:id="@+id/tvTotaisRefSalario"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <TextView
+                        android:id="@+id/tvTotaisProventoSalario"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvTotaisDescontoSalario"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+                </TableRow>
+
+                <TableRow android:background="@drawable/cell_shape_comum" >
+
+                    <TextView
+                        android:id="@+id/textView101"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_span="3"
+                        android:background="@drawable/cell_shape_comum"
+                        android:gravity="center_horizontal"
+                        android:text="@string/tb_ferias_label"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvFeriasLiquido"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/cell_shape_resultado"
+                        android:gravity="center_horizontal"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvINSSFerias"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:text="@string/tb_inss_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic|bold" />
+
+                    <TextView
+                        android:id="@+id/tvRefINSSFerias"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvProventoINSSFerias"
+                        android:background="@drawable/cell_shape_entrada"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic|bold" />
+
+                    <TextView
+                        android:id="@+id/tvDescontoINSSFerias"
+                        android:background="@drawable/cell_shape_saida"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic|bold" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvIRRFFerias"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:text="@string/tb_irrf_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvRefIRRFFerias"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvProventoIRRFFerias"
+                        android:background="@drawable/cell_shape_entrada"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvDescontoIRRFFerias"
+                        android:background="@drawable/cell_shape_saida"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvOutrosFerias"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:text="@string/p_outros_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvOutrosRefFerias"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvOutrosProventoFerias"
+                        android:background="@drawable/cell_shape_entrada"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvOutrosDescontoFerias"
+                        android:background="@drawable/cell_shape_saida"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvTotaisFerias"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:text="@string/tb_totais_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic|bold" />
+
+                    <TextView
+                        android:id="@+id/tvTotaisRefFerias"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvTotaisProventoFerias"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvTotaisDescontoFerias"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+                </TableRow>
+
+                <TableRow
+                    android:background="@drawable/cell_shape_comum"
+                    android:gravity="center_horizontal" >
+
+                    <TextView
+                        android:id="@+id/textView102"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_span="3"
+                        android:gravity="center_horizontal"
+                        android:text="@string/tb_decimo_label"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvDecimoLiquido"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/cell_shape_resultado"
+                        android:gravity="center_horizontal"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvINSSDecimo"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:text="@string/tb_inss_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic|bold" />
+
+                    <TextView
+                        android:id="@+id/tvRefINSSDecimo"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvProventoINSSDecimo"
+                        android:background="@drawable/cell_shape_entrada"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic|bold" />
+
+                    <TextView
+                        android:id="@+id/tvDescontoINSSDecimo"
+                        android:background="@drawable/cell_shape_saida"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic|bold" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvIRRFDecimo"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:text="@string/tb_irrf_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvRefIRRFDecimo"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvProventoIRRFDecimo"
+                        android:background="@drawable/cell_shape_entrada"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvDescontoIRRFDecimo"
+                        android:background="@drawable/cell_shape_saida"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvOutrosDecimo"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:text="@string/p_outros_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvOutrosRefDecimo"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvOutrosProventoDecimo"
+                        android:background="@drawable/cell_shape_entrada"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvOutrosDescontoDecimo"
+                        android:background="@drawable/cell_shape_saida"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvTotaisDecimo"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:text="@string/tb_totais_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic|bold" />
+
+                    <TextView
+                        android:id="@+id/tvTotaisRefDecimo"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvTotaisProventoDecimo"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvTotaisDescontoDecimo"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+                </TableRow>
+
+                <TableRow
+                    android:background="@drawable/cell_shape_comum"
+                    android:gravity="center_horizontal" >
+
+                    <TextView
+                        android:id="@+id/textView103"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_span="3"
+                        android:gravity="center_horizontal"
+                        android:text="@string/tb_liquido_anual"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/liquidoAnual"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/cell_shape_resultado"
+                        android:gravity="center_horizontal"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvTotaisAnual"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:text="@string/tb_total_anual_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic|bold" />
+
+                    <TextView
+                        android:id="@+id/tvTotaisRefAnual"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvTotaisProventoAnual"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic|bold" />
+
+                    <TextView
+                        android:id="@+id/tvTotaisDescontoAnual"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic|bold" />
+                </TableRow>
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvFGTS"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:text="@string/tb_fgts"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvFGTSAnual"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvFGTSProvento"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvFGTSDesconto"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic|bold" />
+                </TableRow>
+                
+                  <TableRow
+                    android:background="@drawable/cell_shape_comum"
+                    android:gravity="center_horizontal" >
+
+                    <TextView
+                        android:id="@+id/tvLiquido"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_span="3"
+                        android:gravity="center_horizontal"
+                        android:text="@string/tb_liquido_direitos"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/liquidoAnualDireito"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/cell_shape_resultado"
+                        android:gravity="center_horizontal"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+                </TableRow>
+            </TableLayout>
+        </TableLayout>
+    </ScrollView>
+
+</RelativeLayout>

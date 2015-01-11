@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="vertical" >
+
+        <TableLayout android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stretchColumns="0,1,2" >
+
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/tvSalarioLabel"
+                        android:text="@string/salario_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <com.kollecionador.taxman.util.FieldSalario
+                        android:id="@+id/fieldSalCLT"
+                        android:nextFocusDown="@+id/fieldValPJ" />
+
+                    <TextView
+                        android:id="@+id/tvValorPJLabel"
+                        android:text="@string/valor_pj_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <com.kollecionador.taxman.util.FieldSalario android:id="@+id/fieldValPJ" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/tvMargemLabel"
+                        android:text="@string/margem_label" />
+
+                    <com.kollecionador.taxman.util.FieldMargem android:id="@+id/fieldMargem" />
+
+                    <TextView
+                        android:id="@+id/tvTaxaAtualLabel"
+                        android:text="@string/tx_atual_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <com.kollecionador.taxman.util.FieldSalario android:id="@+id/fieldTaxaAtual" />
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stretchColumns="0,1" >
+
+                <TableRow
+                    android:id="@+id/tableRow4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <Button
+                        android:id="@+id/btnCalcular"
+                        style="?android:attr/buttonStyleSmall"
+                        android:text="@string/btn_calc" />
+
+                    <Button
+                        android:id="@+id/btnEnviar"
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btn_enviar" />
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/Black"
+                android:stretchColumns="0,1,2" >
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvVazio"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvCLT"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center_horizontal"
+                        android:padding="2dp"
+                        android:text="@string/tb_clt_label"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvPJ"
+                        android:background="@drawable/cell_shape"
+                        android:gravity="center_horizontal"
+                        android:padding="2dp"
+                        android:text="@string/tb_pj_label"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvSalBruto"
+                        android:background="@drawable/cell_shape_comum"
+                        android:padding="2dp"
+                        android:text="@string/tb_sal_bruto_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvSalBrutoCLT"
+                        android:background="@drawable/cell_shape_comum"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvSalBrutoPJ"
+                        android:background="@drawable/cell_shape_comum"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="bold" />
+                </TableRow>
+
+               
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvCustos"
+                        android:background="@drawable/cell_shape_saida"
+                        android:padding="2dp"
+                        android:text="@string/tb_custo_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvCustosCLT"
+                        android:background="@drawable/cell_shape_saida"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic|bold" />
+
+                    <TextView
+                        android:id="@+id/tvCustosPJ"
+                        android:background="@drawable/cell_shape_saida"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic|bold" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvFatura"
+                        android:background="@drawable/cell_shape_sub_saida"
+                        android:padding="2dp"
+                        android:text="@string/tb_imposto_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvFaturaCLT"
+                        android:background="@drawable/cell_shape_sub_saida"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvFaturaPJ"
+                        android:background="@drawable/cell_shape_sub_saida"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvEncargo"
+                        android:background="@drawable/cell_shape_sub_saida"
+                        android:padding="2dp"
+                        android:text="@string/tb_encargo_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvEncargoCLT"
+                        android:background="@drawable/cell_shape_sub_saida"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvEncargoPJ"
+                        android:background="@drawable/cell_shape_sub_saida"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvSalario"
+                        android:background="@drawable/cell_shape_sub_saida"
+                        android:padding="2dp"
+                        android:text="@string/tb_salario_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvSalarioLabelCLT"
+                        android:background="@drawable/cell_shape_sub_saida"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvSalarioLabelPJ"
+                        android:background="@drawable/cell_shape_sub_saida"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvResultadoRS"
+                        android:background="@drawable/cell_shape_resultado"
+                        android:padding="2dp"
+                        android:text="@string/tb_resultado_r_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvResultadoRSCLT"
+                        android:background="@drawable/cell_shape_resultado"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvResultadoRSPJ"
+                        android:background="@drawable/cell_shape_resultado"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvResultadoP"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:text="@string/tb_resultado_p_clt_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvResultadoPCLT"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvResultadoPPJ"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvResultadoT"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:text="@string/tb_resultado_t_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvResultadoTCLT"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/tvResultadoTPJ"
+                        android:background="@drawable/cell_shape_sub_resultado"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="italic" />
+                </TableRow>
+
+                
+                
+                 <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvTaxaMin"
+                        android:background="@drawable/cell_shape_entrada"
+                        android:padding="2dp"
+                        android:text="@string/tb_tx_min_labell"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvTaxaMinCLT"
+                        android:background="@drawable/cell_shape_entrada"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvTaxaMinPJ"
+                        android:background="@drawable/cell_shape_entrada"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="bold" />
+                </TableRow>
+                
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvFaturamento"
+                        android:background="@drawable/cell_shape_entrada"
+                        android:padding="2dp"
+                        android:text="@string/tb_faturamento_label"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvFaturamentoCLT"
+                        android:background="@drawable/cell_shape_entrada"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvFaturamentoPJ"
+                        android:background="@drawable/cell_shape_entrada"
+                        android:padding="2dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textStyle="bold" />
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:background="@color/Black"
+                android:orientation="vertical"
+                android:stretchColumns="0,1,2,3" >
+
+                <TableRow
+                    android:background="@color/gray81"
+                    android:padding="2dp"
+                    android:width="1dp" >
+
+                    <TextView android:id="@+id/textView30" />
+
+                    <TextView
+                        android:id="@+id/tvConfiguracao"
+                        android:text="@string/action_settings" />
+
+                    <TextView android:id="@+id/textView31" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/tvDiaUtil"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:text="@string/p_dias_label" />
+
+                    <TextView
+                        android:id="@+id/tvDiaUtilV"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp" />
+
+                    <TextView
+                        android:id="@+id/tvHoraDia"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:text="@string/p_horas_label" />
+
+                    <TextView
+                        android:id="@+id/tvHoraDiaV"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp" />
+                </TableRow>
+
+                <TableRow
+                    android:background="@color/gray81"
+                    android:width="1dp" >
+
+                    <TextView
+                        android:id="@+id/txtBeneficio"
+                        android:text="Benefícios" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/textView20"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:text="@string/p_alimentacao_label" />
+
+                    <TextView
+                        android:id="@+id/tvAlimentacaoV"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp" />
+
+                    <TextView
+                        android:id="@+id/textView22"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:text="@string/p_transporte_label" />
+
+                    <TextView
+                        android:id="@+id/tvTransporteV"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/textView23"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:text="@string/p_outros_label" />
+
+                    <TextView
+                        android:id="@+id/tvOutrosV"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp" />
+
+                    <TextView
+                        android:id="@+id/textView42"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:text="@string/p_ajuda_label" />
+
+                    <TextView
+                        android:id="@+id/tvAjudaV"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp" />
+                </TableRow>
+
+                <TableRow
+                    android:background="@color/gray81"
+                    android:width="1dp" >
+
+                    <TextView
+                        android:id="@+id/textView26"
+                        android:text="Impostos e Encargos" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/textView27"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:text="@string/p_encargo_label" />
+
+                    <TextView
+                        android:id="@+id/tvEncargoV"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp" />
+
+                    <TextView
+                        android:id="@+id/textView28"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:text="@string/p_imposto_label" />
+
+                    <TextView
+                        android:id="@+id/tvImpostoFaturaV"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/textView29"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp"
+                        android:text="@string/p_dissidio_label" />
+
+                    <TextView
+                        android:id="@+id/tvdissidioV"
+                        android:background="@drawable/cell_shape"
+                        android:padding="2dp" />
+                </TableRow>
+            </TableLayout>
+
+            <TableRow android:layout_width="wrap_content" >
+
+                <TextView
+                    android:id="@+id/tvInfo"
+                    android:layout_width="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/observacao"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+
+</RelativeLayout>
