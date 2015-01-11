@@ -9,7 +9,8 @@
         android:layout_height="fill_parent"
         android:scrollbars="vertical" >
 
-        <TableLayout android:layout_width="match_parent"
+        <TableLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent" >
 
             <TableLayout
@@ -36,19 +37,24 @@
                         android:text="@string/valor_pj_label"
                         android:textAppearance="?android:attr/textAppearanceSmall" />
 
-                    <com.kollecionador.taxman.util.FieldSalario android:id="@+id/fieldValPJ" />
+                    <com.kollecionador.taxman.util.FieldSalario
+                        android:id="@+id/fieldValPJ"
+                        android:nextFocusDown="@id/fieldMargem" />
                 </TableRow>
 
                 <TableRow
                     android:id="@+id/tableRow2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" >
+                    android:layout_height="wrap_content"
+                    android:nextFocusDown="@id/btnCalcular" >
 
                     <TextView
                         android:id="@+id/tvMargemLabel"
                         android:text="@string/margem_label" />
 
-                    <com.kollecionador.taxman.util.FieldMargem android:id="@+id/fieldMargem" />
+                    <com.kollecionador.taxman.util.FieldMargem
+                        android:id="@+id/fieldMargem"
+                        android:nextFocusDown="@id/fieldTaxaAtual" />
 
                     <TextView
                         android:id="@+id/tvTaxaAtualLabel"
@@ -144,8 +150,6 @@
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textStyle="bold" />
                 </TableRow>
-
-               
 
                 <TableRow>
 
@@ -322,9 +326,7 @@
                         android:textStyle="italic" />
                 </TableRow>
 
-                
-                
-                 <TableRow>
+                <TableRow>
 
                     <TextView
                         android:id="@+id/tvTaxaMin"
@@ -348,7 +350,7 @@
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textStyle="bold" />
                 </TableRow>
-                
+
                 <TableRow>
 
                     <TextView
