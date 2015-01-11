@@ -290,21 +290,8 @@ public class TaxaFragment extends Fragment {
 
 		Float salario;
 		Float contrato;
-		Float taxaMinCLT;
-		Float taxaMinPJ;
 		Float taxaCLT;
 		Float taxaPJ;
-
-		Float impostoFaturaCLT;
-		Float cargaCLT;
-
-		Float impostoFaturaPJ;
-		Float faturamentoCLT;
-		Float faturamentoPJ;
-		Float custoCLT;
-		Float custoPJ;
-		Float custoCLTTx;
-		Float custoPJTx;
 
 		salario = Float.valueOf(salarioCLT.getValue());
 		contrato = Float.valueOf(salarioPJ.getValue());
@@ -336,8 +323,9 @@ public class TaxaFragment extends Fragment {
 				+ formato.format(clt.getResultadoRealA()) + "*");
 		txtResultadoPCLT.setText(formatoP.format(clt.getResultadoPercentual())
 				+ "/" + formatoP.format(clt.getResultadoPercentualA()) + "*");
-		txtResultadoPCLTAtual.setText(formatoP.format(clt.getResultadoTxAtual())
-				+ "/" + formatoP.format(clt.getResultadoTxAtualA()) + "*");
+		txtResultadoPCLTAtual
+				.setText(formatoP.format(clt.getResultadoTxAtual()) + "/"
+						+ formatoP.format(clt.getResultadoTxAtualA()) + "*");
 		txtFaturamentoCLT.setText(formato.format(clt.getFaturamento()));
 
 		pj = calc.calculoTabelaTaxa(contrato, taxaPJ,
@@ -352,83 +340,9 @@ public class TaxaFragment extends Fragment {
 		txtCustosSalarioPJ.setText(formato.format(pj.getSalario()));
 		txtResultadoMPJ.setText(formato.format(pj.getResultadoReal()));
 		txtResultadoPPJ.setText(formatoP.format(pj.getResultadoPercentual()));
-		txtFaturamentoPJAtual.setText(formatoP.format(pj.getResultadoTxAtual()));
+		txtFaturamentoPJAtual
+				.setText(formatoP.format(pj.getResultadoTxAtual()));
 		txtFaturamentoPJ.setText(formato.format(pj.getFaturamento()));
-
-		/*
-		 * 
-		 * taxaMinCLT = taxaCLT / (prefDiasMes * prefHorasDia); taxaMinPJ =
-		 * taxaPJ / (prefDiasMes * prefHorasDia); impostoFaturaCLT = taxaMinCLT
-		 * * (prefDiasMes * prefHorasDia) (prefImpFatura / 100); cargaCLT =
-		 * (Float.valueOf(salarioCLT.getValue()) * (prefImpCLT / 100)) +
-		 * (Float.valueOf(salarioCLT.getValue()) * (prefImpDissidio / 100)) +
-		 * beneficio;
-		 * 
-		 * faturamentoCLT = taxaMinCLT * (prefDiasMes * prefHorasDia);
-		 * faturamentoPJ = taxaMinPJ * (prefDiasMes * prefHorasDia);
-		 * 
-		 * impostoFaturaPJ = taxaMinPJ * (prefDiasMes * prefHorasDia)
-		 * (prefImpFatura / 100);
-		 * 
-		 * txtTaxaMinimaCLT.setText(formato.format(taxaMinCLT));
-		 * txtTaxaMinimaPJ.setText(formato.format(taxaMinPJ));
-		 * 
-		 * txtSalarioCLT.setText(formato.format(Float.parseFloat(salarioCLT
-		 * .getValue())));
-		 * txtSalarioPJ.setText(formato.format(Float.parseFloat(salarioPJ
-		 * .getValue())));
-		 * 
-		 * custoCLT = (impostoFaturaCLT + cargaCLT) +
-		 * Float.parseFloat(salarioCLT.getValue());
-		 * 
-		 * taxaCLT = Float.valueOf(txtTaxaAtual.getValue()) (prefDiasMes *
-		 * prefHorasDia);
-		 * 
-		 * custoCLTTx = ((taxaCLT * (prefImpFatura / 100)) + cargaCLT) +
-		 * Float.parseFloat(salarioCLT.getValue());
-		 * 
-		 * txtCustosCLT.setText(formato.format(custoCLT));
-		 * txtCustosImpostoFaturaCLT.setText(formato.format(impostoFaturaCLT));
-		 * txtCustosEncargosCLT.setText(formato.format(cargaCLT));
-		 * txtCustosSalarioCLT
-		 * .setText(formato.format(Float.parseFloat(salarioCLT .getValue())));
-		 * 
-		 * custoPJ = (impostoFaturaPJ) + Float.parseFloat(salarioPJ.getValue());
-		 * 
-		 * custoPJTx = (Float.valueOf(txtTaxaAtual.getValue()) (prefDiasMes *
-		 * prefHorasDia) * (prefImpFatura / 100)) +
-		 * Float.parseFloat(salarioPJ.getValue());
-		 * 
-		 * txtCustosPJ.setText(formato.format(custoPJ));
-		 * txtCustosImpostoFaturaPJ.setText(formato.format(impostoFaturaPJ));
-		 * txtCustosEncargosPJ.setText("Não se aplica");
-		 * txtCustosSalarioPJ.setText(formato.format(Float.parseFloat(salarioPJ
-		 * .getValue())));
-		 * 
-		 * Float custoAjuda = faturamentoCLT - custoCLT - prefBenAjuda; String
-		 * sinal = ""; if (custoAjuda < 0) sinal = " - ";
-		 * 
-		 * txtResultadoMCLT.setText(formato.format(faturamentoCLT - custoCLT) +
-		 * "/" + sinal + formato.format(faturamentoCLT - custoCLT -
-		 * prefBenAjuda) + "*");
-		 * 
-		 * txtResultadoMPJ.setText(formato.format(faturamentoPJ - custoPJ));
-		 * formatoP.setMaximumFractionDigits(2); txtResultadoPCLT
-		 * .setText(formatoP.format((1 - (custoCLT / faturamentoCLT))) + "/" +
-		 * formatoP .format((1 - ((custoCLT + prefBenAjuda) / faturamentoCLT)))
-		 * + "*");
-		 * 
-		 * txtResultadoPPJ.setText(formatoP .format((1 - (custoPJ /
-		 * faturamentoPJ))));
-		 * 
-		 * txtFaturamentoCLT.setText(formato.format(faturamentoCLT));
-		 * txtFaturamentoPJ.setText(formato.format(faturamentoPJ));
-		 * 
-		 * txtResultadoPCLTAtual.setText(formatoP .format((1 - (custoCLTTx /
-		 * taxaCLT))) + "/" + formatoP .format((1 - ((custoCLTTx + prefBenAjuda)
-		 * / taxaCLT))) + "*"); txtFaturamentoPJAtual.setText(formatoP
-		 * .format((1 - (custoPJTx / taxaCLT))));
-		 */
 
 		textoEnviar = "Cálculo de Taxa Ideal    " + "\nTaxa Ideal CLT:"
 				+ txtTaxaMinimaCLT.getText() + "\nTaxa Atual:"

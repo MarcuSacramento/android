@@ -23,11 +23,10 @@ public class Calculos {
 				"Contrato Pessoa Jurídica"), CONTRATACAO_ESTAGIARIO("STAG",
 				"Contrato de Estágio");
 
-		private String nome, descricao;
+		private String nome;
 
 		Contratacao(String nome, String descricao) {
 			this.nome = nome;
-			this.descricao = descricao;
 
 		}
 
@@ -99,7 +98,8 @@ public class Calculos {
 		}
 
 		if (contratação.equalsIgnoreCase(Contratacao.CONTRATACAO_CLT.getNome())) {
-			valorBase = (salario + (salario * encargo) + (salario * dissidio))+ beneficio;
+			valorBase = (salario + (salario * encargo) + (salario * dissidio))
+					+ beneficio;
 
 		} else {
 			valorBase = salario;
@@ -183,9 +183,8 @@ public class Calculos {
 			List<FaixaSalarial> faixaSalarial) {
 		FaixaSalarial faixa = new FaixaSalarial();
 		ResultadoFaixaSalarial resultado = new ResultadoFaixaSalarial();
-		resultado.setValor(new Float("0.00"));
-		resultado.setPercentual(new Float("0.00"));
-		Float resultadoAux = new Float("0.00");
+		resultado.setValor(Float.valueOf(0));
+		resultado.setPercentual(Float.valueOf(0));
 
 		for (FaixaSalarial s : faixaSalarial) {
 
@@ -197,9 +196,9 @@ public class Calculos {
 			faixa = s;
 
 		}
-		if (resultado.getPercentual().equals(new Float("0.00"))
-				&& resultado.getValor().equals(new Float("0.00"))
-				&& !faixa.getPercentual().equals(new Float("0.00"))) {
+		if (resultado.getPercentual().equals(Float.valueOf(0))
+				&& resultado.getValor().equals(Float.valueOf(0))
+				&& !faixa.getPercentual().equals(Float.valueOf(0))) {
 			resultado.setValor(faixa.getPercentual());
 
 		}
@@ -209,7 +208,7 @@ public class Calculos {
 	}
 
 	/**
-	 * Método para cálculo de Qual Faixa Salarial do IRRF se adequa ao Salário
+	 * Método para cálculo de qual Faixa Salarial do IRRF se adequa ao Salário
 	 * Bruto Informado
 	 * 
 	 * @param salario
@@ -222,11 +221,10 @@ public class Calculos {
 	 */
 	public ResultadoFaixaSalarial calculaFaixaIRRF(Float salario,
 			List<FaixaSalarial> faixaSalarial) {
-		FaixaSalarial faixa = new FaixaSalarial();
+
 		ResultadoFaixaSalarial resultado = new ResultadoFaixaSalarial();
-		resultado.setValor(new Float("0.00"));
-		resultado.setPercentual(new Float("0.00"));
-		Float resultadoAux = new Float("0.00");
+		resultado.setValor(Float.valueOf(0));
+		resultado.setPercentual(Float.valueOf(0));
 
 		for (FaixaSalarial s : faixaSalarial) {
 
@@ -234,9 +232,7 @@ public class Calculos {
 				resultado.setValor((salario * (s.percentual / 100))
 						- s.getDeducao());
 				resultado.setPercentual(s.percentual);
-
 			}
-
 		}
 
 		return resultado;
@@ -258,10 +254,16 @@ public class Calculos {
 		TabelaTaxa tabelaResultado = new TabelaTaxa();
 
 		tabelaResultado.setSalario(salario);
+		/**
+		 * Cálculo da Taxa Mínima por hora
+		 */
 		tabelaResultado.setTaxa(valor
 				/ (pref.getDiasUteis() * pref.getHorasTrabalho()));
 		tabelaResultado.setImposto(valor * (pref.getImpFatura() / 100));
 
+		/**
+		 * Cálculo dos Encargos trabalhistas e benefícios
+		 */
 		if (contrato.equals(Contratacao.CONTRATACAO_CLT)) {
 			tabelaResultado
 					.setEncargos((salario * (pref.getImpEncargo() / 100))
@@ -272,34 +274,59 @@ public class Calculos {
 			tabelaResultado.setEncargos((float) 0.00);
 			tabelaResultado.setBeneficios((float) 0.00);
 		}
-
+		/**
+		 * Cálculo dos custos
+		 */
 		if (contrato.equals(Contratacao.CONTRATACAO_CLT)) {
 
+			/**
+			 * Cálculo do Resultado Real(R$)
+			 */
 			tabelaResultado.setResultadoReal(valor
 					- tabelaResultado.getCustos());
+			/**
+			 * Cálculo do Resultado percentual(%)
+			 */
 			tabelaResultado.setResultadoPercentual(1 - (tabelaResultado
 					.getCustos() / valor));
+			/**
+			 * Cálculo do Resultado Real sob a taxa atual
+			 */
 			tabelaResultado.setResultadoTxAtual(1
 					- tabelaResultado.getCustos()
 					/ (taxaAtual * pref.getDiasUteis() * pref
 							.getHorasTrabalho()));
-
+			/**
+			 * Cálculo do Resultado Real(R$) com variação da Ajuda de custo
+			 */
 			tabelaResultado.setResultadoRealA(valor
 					- tabelaResultado.getCustos() - pref.getBenAjudaCusto());
-
+			/**
+			 * Cálculo do Resultado percentual(%) com variação da Ajuda de custo
+			 */
 			tabelaResultado.setResultadoPercentualA(1 - ((tabelaResultado
 					.getCustos() + pref.getBenAjudaCusto()) / valor));
-
+			/**
+			 * Cálculo do Resultado(R$) com variação da Ajuda de custo
+			 */
 			tabelaResultado.setResultadoTxAtualA(1
 					- (tabelaResultado.getCustos() + pref.getBenAjudaCusto())
 					/ (taxaAtual * pref.getDiasUteis() * pref
 							.getHorasTrabalho()));
-
 		} else {
+			/**
+			 * Cálculo do Resultado Real(R$)
+			 */
 			tabelaResultado.setResultadoReal(valor
 					- tabelaResultado.getCustos());
+			/**
+			 * Cálculo do Resultado percentual(%)
+			 */
 			tabelaResultado.setResultadoPercentual(1 - (tabelaResultado
 					.getCustos() / valor));
+			/**
+			 * Cálculo do Resultado Real sob a taxa atual
+			 */
 			tabelaResultado.setResultadoTxAtual(1
 					- tabelaResultado.getCustos()
 					/ (taxaAtual * pref.getDiasUteis() * pref
@@ -316,9 +343,7 @@ public class Calculos {
 					/ (taxaAtual * pref.getDiasUteis() * pref
 							.getHorasTrabalho()));
 		}
-
 		tabelaResultado.setFaturamento(valor);
-
 		return tabelaResultado;
 	}
 }
