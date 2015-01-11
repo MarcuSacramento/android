@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="javadoc">
+    <target name="javadoc">
+        <javadoc access="public" author="true" classpath="/home/marcus/Documentos/Projetos/Android/ADT/sdk/platforms/android-19/android.jar" destdir="doc" doctitle="Doc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" source="1.7" sourcefiles="src/com/kollecionador/taxman/TaxaFragment.java" sourcepath="src:gen" splitindex="true" use="true" version="true">
+"/path/to/sdk/platforms/android-##/android.jar"
+            <link href="file:/home/marcus/workspace/TaxMan/doc/"/>
+            <link href="file:/home/marcus/Documentos/Projetos/Android/ADT/sdk/docs/reference"/>
+        </javadoc>
+    </target>
+</project>
