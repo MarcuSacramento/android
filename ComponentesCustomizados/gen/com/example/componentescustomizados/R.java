@@ -9,6 +9,34 @@ package com.example.componentescustomizados;
 
 public final class R {
     public static final class attr {
+<<<<<<< HEAD
+=======
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int cor=0x7f010002;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int nome=0x7f010003;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int quantia=0x7f010004;
+>>>>>>> refactoring
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -42,15 +70,28 @@ containing a value of this type.
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
+<<<<<<< HEAD
         public static final int action_settings=0x7f080003;
         public static final int container=0x7f080000;
         public static final int view1=0x7f080001;
         public static final int view2=0x7f080002;
+=======
+        public static final int action_settings=0x7f080004;
+        public static final int container=0x7f080000;
+        public static final int view1=0x7f080001;
+        public static final int view2=0x7f080002;
+        public static final int view3=0x7f080003;
+>>>>>>> refactoring
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int fragment_main=0x7f030001;
+<<<<<<< HEAD
         public static final int view_color_options=0x7f030002;
+=======
+        public static final int jogador_item=0x7f030002;
+        public static final int view_color_options=0x7f030003;
+>>>>>>> refactoring
     }
     public static final class menu {
         public static final int main=0x7f070000;
@@ -89,6 +130,69 @@ containing a value of this type.
         public static final int AppTheme=0x7f060001;
     }
     public static final class styleable {
+<<<<<<< HEAD
+=======
+        /** Attributes that can be used with a Jogador.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #Jogador_cor com.example.componentescustomizados:cor}</code></td><td></td></tr>
+           <tr><td><code>{@link #Jogador_nome com.example.componentescustomizados:nome}</code></td><td></td></tr>
+           <tr><td><code>{@link #Jogador_quantia com.example.componentescustomizados:quantia}</code></td><td></td></tr>
+           </table>
+           @see #Jogador_cor
+           @see #Jogador_nome
+           @see #Jogador_quantia
+         */
+        public static final int[] Jogador = {
+            0x7f010002, 0x7f010003, 0x7f010004
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.example.componentescustomizados.R.attr#cor}
+          attribute's value can be found in the {@link #Jogador} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.componentescustomizados:cor
+        */
+        public static final int Jogador_cor = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.example.componentescustomizados.R.attr#nome}
+          attribute's value can be found in the {@link #Jogador} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.componentescustomizados:nome
+        */
+        public static final int Jogador_nome = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.example.componentescustomizados.R.attr#quantia}
+          attribute's value can be found in the {@link #Jogador} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.componentescustomizados:quantia
+        */
+        public static final int Jogador_quantia = 2;
+>>>>>>> refactoring
         /** Attributes that can be used with a Options.
            <p>Includes the following attributes:</p>
            <table>
