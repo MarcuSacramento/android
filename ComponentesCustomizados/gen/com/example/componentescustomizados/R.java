@@ -9,7 +9,6 @@ package com.example.componentescustomizados;
 
 public final class R {
     public static final class attr {
-
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -35,7 +34,6 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int quantia=0x7f010004;
-
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -69,31 +67,17 @@ containing a value of this type.
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-
-        public static final int action_settings=0x7f080003;
-        public static final int container=0x7f080000;
-        public static final int view1=0x7f080001;
-        public static final int view2=0x7f080002;
-
         public static final int action_settings=0x7f080004;
         public static final int container=0x7f080000;
         public static final int view1=0x7f080001;
         public static final int view2=0x7f080002;
         public static final int view3=0x7f080003;
-
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int fragment_main=0x7f030001;
-
-        public static final int view_color_options=0x7f030002;
-
         public static final int jogador_item=0x7f030002;
         public static final int view_color_options=0x7f030003;
-
-        public static final int jogador_item=0x7f030002;
-        public static final int view_color_options=0x7f030003;
-
     }
     public static final class menu {
         public static final int main=0x7f070000;
@@ -132,7 +116,6 @@ containing a value of this type.
         public static final int AppTheme=0x7f060001;
     }
     public static final class styleable {
-
         /** Attributes that can be used with a Jogador.
            <p>Includes the following attributes:</p>
            <table>
@@ -193,7 +176,6 @@ containing a value of this type.
           @attr name com.example.componentescustomizados:quantia
         */
         public static final int Jogador_quantia = 2;
-
         /** Attributes that can be used with a Options.
            <p>Includes the following attributes:</p>
            <table>
