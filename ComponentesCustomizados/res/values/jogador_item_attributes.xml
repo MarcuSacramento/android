@@ -4,7 +4,7 @@
     <declare-styleable name="Jogador">
         <attr name="cor" format="color" />
         <attr name="nome" format="string" localization="suggested" />
-        <attr name="quantia" format="string"  />
+        <attr name="quantia" format="string" />
     </declare-styleable>
 
 </resources>
