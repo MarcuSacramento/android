@@ -1,6 +1,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    xmlns:custom="http://schemas.android.com/apk/res/com.example.componentescustomizados"
+>>>>>>> refactoring
 =======
     xmlns:custom="http://schemas.android.com/apk/res/com.example.componentescustomizados"
 >>>>>>> refactoring
@@ -11,11 +15,17 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
 <<<<<<< HEAD
+<<<<<<< HEAD
     tools:context="com.example.componentescustomizados.MainActivity$PlaceholderFragment" 
     xmlns:custom="http://schemas.android.com/apk/res/com.example.componentescustomizados">
 
     <LinearLayout
         
+=======
+    tools:context="com.example.componentescustomizados.MainActivity$PlaceholderFragment" >
+
+    <LinearLayout
+>>>>>>> refactoring
 =======
     tools:context="com.example.componentescustomizados.MainActivity$PlaceholderFragment" >
 
@@ -46,7 +56,10 @@
             custom:titleText="Foreground color"
             custom:valueColor="@android:color/holo_orange_dark" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> refactoring
 
         <com.example.componentescustomizados.JogadorItem
             android:id="@+id/view3"
@@ -57,6 +70,9 @@
             custom:cor="@android:color/black"
             custom:nome="Nome do Jogador"
             custom:quantia="R$2000,00" />
+<<<<<<< HEAD
+>>>>>>> refactoring
+=======
 >>>>>>> refactoring
     </LinearLayout>
 
